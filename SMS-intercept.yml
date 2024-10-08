@@ -1,1 +1,14 @@
+on:
+  sms:
+    number: "+2349163468960" # Replace with the phone number you want to intercept SMS from
 
+jobs:
+  process_sms:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Process SMS
+      run: |
+        echo "Received SMS from ${{ github.event.sms.number }}"
+        echo "Message: ${{ github.event.sms.message }}"
+        # Add your custom logic here to process the SMS message
